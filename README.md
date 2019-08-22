@@ -3,9 +3,7 @@
 
 You have been asked to add a slideshow to the homepage of a zoo web application that will show some of the animals’ photos. The slideshow will display each photo in a large size. However, the slideshow will display only one photo at a time, and cycle through all the photos in order.
 
-You want to use jQuery to create this slideshow because you want to cycle through the photos in the browser, without reloading the page each time. 
 
-You have been also asked to add a purchase page, to enable customers to buy adult, child, and senior tickets to the zoo. You will use jQuery to do calculations on the page. You will also use client-side validation to validate the input typed by the users.
 
 #### Objectives
 
@@ -45,8 +43,7 @@ The main tasks for this exercise are as follows:
 
 
 #### Task 1: Create a layout
-1. From **[Repository Root]\Allfiles\Mod08\Labfiles\01_ZooSite_begin**, open **ZooSite.sln**.
-
+1. 
     >**Note**: If a **Security Warning for ZooSite** dialog box appears, verify that the **Ask me for every project in this solution** check box is cleared, and then click OK.
 
 2. Create a new folder with the following information:
@@ -182,8 +179,8 @@ The main tasks for this exercise are as follows:
 
 1. Add the existing **.cshtml** files to the **ZooSite** project, with the following information:
 
-    - Source location: **[Repository Root]\Allfiles\Mod08\Labfiles\ZooViews**
-	- Target location: **[Repository Root]\Allfiles\Mod08\Labfiles\01_ZooSite_begin\ZooSite\Views**
+    - Source location: **[Repository Root]\Sources**
+	- Target location: **[Repository Root]\ZooSite\Views**
 
 
 #### Task 5: Add a section to the layout
@@ -241,8 +238,8 @@ The main tasks for this exercise are as follows:
 
 2. To the **ZooSite** project, add the **zoo-style.css** file, with the following information:
 
-	- Source location: **[Repository Root]\Allfiles\Mod08\Labfiles\ZooCSS**
-	- Target location: **[Repository Root]\Allfiles\Mod08\Labfiles\01_ZooSite_begin\ZooSit\wwwroot\css**
+	- Source location: **[Repository Root]\Sources**
+	- Target location: **[Repository Root]\wwwroot\css**
 
 3. In the **Startup** class, in the **Configure** method, after the call to the **zooContext.Database.EnsureCreated** method, call the **UseStaticFiles** method of the **app** parameter.
 
