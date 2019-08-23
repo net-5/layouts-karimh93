@@ -7,9 +7,10 @@
 
 
   <ItemGroup>
-    <Content Remove="Views\Zoo\BuyTickets.cshtml" />
-    <Content Remove="Views\Zoo\ThankYou.cshtml" />
     <Content Remove="Views\Zoo\VisitorDetails.cshtml" />
+    <Content Remove="Views\Zoo\ThankYou.cshtml" />
+    <Content Remove="Views\Zoo\BuyTickets.cshtml" />
+    
   </ItemGroup>
   
   
