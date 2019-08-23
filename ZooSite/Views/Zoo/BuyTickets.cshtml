@@ -1,0 +1,149 @@
+﻿@model ZooSite.Models.Customer
+
+@{
+    ViewData["Title"] = "BuyTickets";
+}
+
+<style>
+    .info .form-field {
+        text-align: left;
+    }
+
+        .info .form-field div {
+            width: 172px;
+            text-align: right;
+            float: right;
+        }
+
+    .info label {
+        width: 118px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .info input {
+        border-radius: 12px;
+        line-height: 20px;
+        border: 1px solid #ccc6c6;
+        background-color: #f9f6f6;
+        width: 100%;
+    }
+
+    input.submit-btn {
+        width: 100px;
+        margin-top: 12px;
+        height: 29px;
+        background-color: orange;
+        font-weight: bold;
+        box-shadow: inset 0px 0px 4px #b77006;
+        border: 1px solid #a59797;
+    }
+
+        input.submit-btn[disabled] {
+            opacity: 0.8;
+            background-color: whitesmoke;
+            box-shadow: none;
+        }
+</style>
+
+<div class="container buy-tickets">
+    <div class="info">
+        <div class="step-title">Step 1 - Choose Tickets</div>
+        <table class="pricing">
+            <tr>
+                <td>Adult</td>
+                <td id="adultCost">$35</td>
+                <td>
+                    <select id="adultQuantity">
+                        <option selected="selected" value="0">0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Child</td>
+                <td id="childCost">$23</td>
+                <td>
+                    <select id="childQuantity">
+                        <option selected="selected" value="0">0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Senior</td>
+                <td id="seniorCost">$30</td>
+                <td>
+                    <select id="seniorQuantity">
+                        <option selected="selected">0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div id="summery" class="hidden-div">
+            <p>Order Summary</p>
+            <table id="totalAmount"></table>
+            <label id="sum"></label>
+        </div>
+    </div>
+    <div class="info">
+        <div class="step-title">Step 2 - Buy Tickets</div>
+        <form method="post" enctype="multipart/form-data" asp-action="BuyTickets">
+            <div class="form-field">
+                <label asp-for="FirstName"></label>
+                <div>
+                    <input asp-for="FirstName" />
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+            </div>
+            <div class="form-field">
+                <label asp-for="LastName"></label>
+                <div>
+                    <input asp-for="LastName" />
+                    <span asp-validation-for="LastName"></span>
+                </div>
+            </div>
+            <div class="form-field">
+                <label asp-for="Address"></label>
+                <div>
+                    <input asp-for="Address" />
+                    <span asp-validation-for="Address"></span>
+                </div>
+            </div>
+            <div class="form-field">
+                <label asp-for="Email"></label>
+                <div>
+                    <input asp-for="Email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+            </div>
+            <div class="form-field">
+                <label asp-for="PhoneNumber"></label>
+                <div>
+                    <input asp-for="PhoneNumber" />
+                    <span asp-validation-for="PhoneNumber"></span>
+                </div>
+            </div>
+            <div class="form-field" id="formButtons">
+                <input class="submit-btn" type="submit" value="Buy" disabled />
+                <div id="comment">Please Choose Tickets</div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+}
