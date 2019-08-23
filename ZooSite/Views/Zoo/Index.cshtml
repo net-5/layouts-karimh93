@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ZooSite.Models.Photo>
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .photo-index-card {
+        background-color: #ffffff;
+        padding: 0;
+        margin: 10px 5px 15px 18px;
+        padding-bottom: 25px;
+        width: 355px;
+        border: 1px solid #d6d4d4;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+</style>
+
+<h1 class="main-title">Zoo Attractions</h1>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="photo-index-card">
+            @if (item.PhotoFileName != null)
+            {
+                <div class="image-wrapper">
+                    <img class="photo-display-img" src=@Url.Action("GetImage","Zoo",new { PhotoId = item.PhotoID } ) />
+                </div>
+            }
+            <h3 class="display-picture-title">@Html.DisplayFor(modelItem => item.Title)</h3>
+            <div>
+                <span class="display">@Html.DisplayFor(model => item.Description)</span>
+            </div>
+        </div>
+    }
+</div>

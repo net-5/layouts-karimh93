@@ -1,12 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+
+
+  <ItemGroup>
+    <Content Remove="Views\Zoo\VisitorDetails.cshtml" />
+    <Content Remove="Views\Zoo\ThankYou.cshtml" />
+    <Content Remove="Views\Zoo\BuyTickets.cshtml" />
+    
+  </ItemGroup>
+  
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
 </Project>
